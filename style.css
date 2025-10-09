@@ -1,0 +1,419 @@
+#image_de_fond{
+    width: 100%;
+    display: block;
+}
+/* --- Style global de la page --- */
+
+html{
+    height: 100%;
+}
+
+body {
+    margin: 0;                  /* Supprime les marges par défaut du navigateur */
+    background-color: whitesmoke ;    /* Définit un fond blanc pour toute la page */
+    height: 100%;
+}
+
+/* --- En-tête (header) --- */
+
+header {
+    display: flex;              /* Active le modèle flexbox pour aligner les éléments horizontalement */
+    background-color:#f9f7ea ;  /* Couleur de fond dorée */
+    padding: 1%;                /* Espacement interne */
+    align-items: center;        /* Centre verticalement les éléments dans le header */
+    height:7%;
+}
+
+/* --- Image de la Rotonde dans le header --- */
+
+#header_rotonde {
+    /* position: fixed; */
+    width: 12%;                /* Largeur proportionnelle à la taille de l’écran */
+    margin-left: 1%;            /* Décalage à gauche */
+    padding: 0px;               /* Pas de padding */
+}
+
+/* --- Bloc contenant les liens du header --- */
+
+#bloc_lien_header {
+    width: fit-content;         /* S’adapte à la largeur du contenu */
+    font-size: 100%;            /* Agrandit la taille du texte */
+    display: flex;              /* Organisation en flexbox */
+    flex-direction: row;        /* Les liens sont alignés en ligne */
+    justify-content: center;    /* Centrage horizontal (axe principal) */
+    align-items: center;        /* Centrage vertical (axe secondaire) */
+
+    white-space: nowrap;        /* Empêche le retour à la ligne des liens */
+    margin: 0 auto;             /* Centre le bloc horizontalement */
+    padding-bottom: 0.5%;                /* Espacement interne */
+    padding-top: 0.5%;
+    padding-left: 15%;           /* Plus d’espace à gauche */
+    padding-right: 15%;          /* Plus d’espace à droite */
+}
+
+/* --- Style des liens dans le header --- */
+
+.lien_header {
+    margin-left: 1%;               /* Espacement entre les liens */
+    margin-right: 1%;
+    text-decoration: none;      /* Supprime le soulignement */
+    color: #4a4a4a;                /* Texte gris */
+    transition: color 0.5s;     /* Animation douce lors du changement de couleur */
+    padding: 1%;                /* Espacement interne */
+    cursor: pointer;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    position: relative;
+}
+
+/* Le lien principal (Fontaines ▾) */
+.navbar .dropdown > a {
+    display: inline-block;
+    padding: 0.5rem 0.8rem;
+    text-decoration: none;
+    color: #4a4a4a;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Conteneur du sous-menu (initialement caché) */
+.navbar .dropdown .dropdown-content {
+    position: absolute;
+    top: calc(100% + 6px); /* juste sous le lien */
+    left: 0;
+    background: #f0efed;
+    min-width: 220px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    border-radius: 6px;
+    padding: 0.25rem 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+}
+
+/* Chaque élément du sous-menu */
+.navbar .dropdown .dropdown-content li {
+    display: block;
+    margin: 0;
+}
+
+.navbar .dropdown .dropdown-content li a {
+    display: block;
+    padding: 0.55rem 0.9rem;
+    text-decoration: none;
+    color: #4a4a4a;
+    white-space: nowrap;
+    transition: background 120ms;
+}
+
+/* Effet au survol d'un item du sous-menu */
+.navbar .dropdown .dropdown-content li a:hover {
+    background: #f2f2f2;
+}
+
+/* Afficher le sous-menu au survol ou quand il a le focus (clavier) */
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown:focus-within .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- Effet au survol des liens --- */
+
+.lien_header:hover {
+    color: wheat;             /* Devient blanc au survol */
+    /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
+}
+
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 5%;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;  
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #cfae4d;
+    width: 23%;
+    height: 100%;
+    transition: all 0.3s ease;
+    /* border: solid red 1px; */
+}
+
+.cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 132%;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #4a4a4a;
+}
+
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 1%;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #F0EFED;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+#bloc_de_fond{
+    display: flex;
+    background-image: url("img/image_aix.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* height: 100%; */
+    justify-content: center;
+}
+
+@keyframes reveal {
+    from{
+        transform: : scale(0);
+        opacity : 0 ;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#texte_et_bouton_titre{
+    /* border: solid 3px red; */
+    padding: 10%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation:  reveal linear 1.3s;
+}
+
+h1{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 300%;
+}
+
+#texte_ville_fontaine{
+    color: whitesmoke;
+}
+
+.cssbuttons-io-button {
+    background: #cfae4d;
+    color: white;
+    font-family: inherit;
+    padding: 0.35em;
+    padding-left: 1.2em;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 0.9em;
+    border: none;
+    letter-spacing: 0.05em;
+    display: block;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: inset 0 0 1.6em -0.6em #cfae4d;
+    overflow: hidden;
+    position: relative;
+    height: 2.8em;
+    padding-right: 3.3em;
+    cursor: pointer;
+}
+
+.cssbuttons-io-button .icon {
+    position: absolute;
+    background-color: white;
+    right: 0.3em;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.2em;
+    width: 2.2em;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em 0.6em 0.2em #F0EFED;
+    transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  height: 1.1em;
+  display: block;
+  transform-origin: center;
+  transition: transform 0.3s;
+  color: #4a4a4a;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+
+#parti_mirabeau{
+    background-color: #f9f7ea;
+}
+
+#mirabeau{
+    display: flex;
+    justify-content: center;
+    /* border: solid 3px black; */
+    width: 75%;
+    margin: 0 auto;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
+    padding-bottom: 5%;
+    background-color: #e5e4e2;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#titre_mirabeau{
+    text-align: center;
+}
+
+#image_mirabeau{
+    /* border: solid 3px red; */
+    max-width: 100%;
+    width: 100%;
+    max-width: fit-content;
+}
+
+#texte_mirabeau{
+    /* border: solid 3px green; */
+    padding: 0;
+    max-width: fit-content;
+    width: 82%;
+}
+
+#parti_carte{
+    background-color: #F0EFED;
+}
+
+
+p{
+    margin: 0;
+    padding: 0;
+}
+
+
+#bloc_de_bloc{
+    display: flex;
+    position: relative;
+    border: black solid 2px;
+    width: 70%;
+    height: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#bloc1{
+    background-color: red;
+    position: absolute;
+    display: flex;
+    width: 33%;
+    height: 30%;
+    z-index: 1;
+    top: 9%;
+}
+
+#bloc2{
+    display: flex;
+    position: absolute;
+    background-color: green;
+    width: 45%;
+    height: 30%;
+    z-index: 5;
+    right: 0%;
+    top:5%;
+}
+
+#bloc3{
+    display: flex;
+    background-color: blue;
+    position: absolute;
+    width: 45%;
+    height: 35%;
+    z-index: 4;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#bloc4{
+    display: flex;
+    background-color: orange;
+    position: absolute;
+    width: 36%;
+    height: 30%;
+    z-index: 2;
+    bottom:13%;
+    left: 10%;
+}
+
+#bloc5{
+    display: flex;
+    background-color: purple;
+    position: absolute;
+    width: 50%;
+    height: 30%;
+    z-index: 1;
+    bottom: 0%;
+    right: 8%;
+}
+
+
+
+
+
+
+
