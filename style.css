@@ -196,7 +196,7 @@ header {
 
 #bloc_de_fond{
     display: flex;
-    background-image: url("img/image_aix.jpg");
+    background-image: url("../img/image_aix.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     /* height: 100%; */
