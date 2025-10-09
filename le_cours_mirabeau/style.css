@@ -22,9 +22,13 @@ header {
 
 #header_rotonde {
     /* position: fixed; */
-    width: 12%;                /* Largeur proportionnelle à la taille de l’écran */
+    width: 100%;                /* Largeur proportionnelle à la taille de l’écran */
     margin-left: 1%;            /* Décalage à gauche */
     padding: 0px;               /* Pas de padding */
+}
+
+#lien_logo{
+    width: 12.5%;
 }
 
 /* --- Bloc contenant les liens du header --- */
