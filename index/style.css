@@ -339,6 +339,18 @@ h2 {
     margin: 0;
 }
 
+#bloc_image_ville {
+    display: flex;
+    /* border: 1px solid red; */
+    width: 60%;
+    height: 58%;
+    background-image: url(../../img/bd_du_roi_rene.png);
+    background-position: center;
+    background-size: contain;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+}
+
 #bloc_titre_description {
     display: flex;
     justify-content: center;
@@ -435,10 +447,12 @@ h2 {
     box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
+
+
 #bloc_de_bloc {
     display: flex;
     position: relative;
-    border: black solid 2px;
+    /* border: black solid 2px; */
     width: 70%;
     height: 90%;
     margin: 0 auto;
@@ -450,69 +464,86 @@ h2 {
     display: flex;
     width: 33%;
     z-index: 1;
-    top: 9%;
+    top: 0%;
 }
 
 #photo_bas_1 {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #bloc2 {
     display: flex;
     position: absolute;
-    width: 25%;
+    width: 40%;
     z-index: 5;
     right: 0%;
-    top: 5%;
+    top: 1%;
 }
 
 #photo_bas_2 {
     width: 100%;
-    /* border-radius: 10px; */
+    border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #bloc3 {
     display: flex;
     position: absolute;
-    width: 45%;
+    width: 40%;
     z-index: 4;
     left: 50%;
     right: 50%;
-    bottom: 50%;
-    top: 50%;
+    top: 41%;
     transform: translate(-50%, -50%);
 }
 
 #photo_bas_3 {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #bloc4 {
     display: flex;
     position: absolute;
-    width: 36%;
+    width: 40%;
     z-index: 2;
-    bottom: 13%;
-    left: 10%;
+    bottom: 24%;
+    left: 5%;
 }
 
 #photo_bas_4 {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #bloc5 {
     display: flex;
     position: absolute;
-    width: 50%;
-    z-index: 1;
-    bottom: 0%;
-    right: 8%;
+    width: 36%;
+    z-index: 3;
+    bottom: 3%;
+    right: 23%;
 }
 
 #photo_bas_5 {
     width: 100%;
     border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #F0EFED;
+    padding: 3.5%;
+}
+
+#footer_lien_logo {
+    width: 10%;
+}
+
+#footer_logo {
+    width: 15%;
 }
