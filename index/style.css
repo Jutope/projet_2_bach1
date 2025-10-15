@@ -1,69 +1,95 @@
-#image_de_fond{
+#image_de_fond {
     width: 100%;
     display: block;
 }
+
 /* --- Style global de la page --- */
 
-html{
+html {
     height: 100%;
 }
 
 body {
-    margin: 0;                  /* Supprime les marges par défaut du navigateur */
-    background-color: #f9f7ea ;    /* Définit un fond blanc pour toute la page */
+    margin: 0;
+    /* Supprime les marges par défaut du navigateur */
+    background-color: #f9f7ea;
+    /* Définit un fond blanc pour toute la page */
     height: 100%;
 }
 
 /* --- En-tête (header) --- */
 
 header {
-    display: flex;              /* Active le modèle flexbox pour aligner les éléments horizontalement */
-    background-color:#f9f7ea ;  /* Couleur de fond dorée */
-    padding: 1%;                /* Espacement interne */
-    align-items: center;        /* Centre verticalement les éléments dans le header */
-    height:7%;
+    display: flex;
+    /* Active le modèle flexbox pour aligner les éléments horizontalement */
+    background-color: #f9f7ea;
+    /* Couleur de fond dorée */
+    padding: 1%;
+    /* Espacement interne */
+    align-items: center;
+    /* Centre verticalement les éléments dans le header */
+    height: 7%;
 }
 
 /* --- Image de la Rotonde dans le header --- */
 
 #header_rotonde {
     /* position: fixed; */
-    width: 100%;                /* Largeur proportionnelle à la taille de l’écran */
-    margin-left: 1%;            /* Décalage à gauche */
-    padding: 0px;               /* Pas de padding */
+    width: 100%;
+    /* Largeur proportionnelle à la taille de l’écran */
+    margin-left: 1%;
+    /* Décalage à gauche */
+    padding: 0px;
+    /* Pas de padding */
 }
 
-#lien_logo{
+#lien_logo {
     width: 12.5%;
 }
 
 /* --- Bloc contenant les liens du header --- */
 
 #bloc_lien_header {
-    width: fit-content;         /* S’adapte à la largeur du contenu */
-    font-size: 100%;            /* Agrandit la taille du texte */
-    display: flex;              /* Organisation en flexbox */
-    flex-direction: row;        /* Les liens sont alignés en ligne */
-    justify-content: center;    /* Centrage horizontal (axe principal) */
-    align-items: center;        /* Centrage vertical (axe secondaire) */
+    width: fit-content;
+    /* S’adapte à la largeur du contenu */
+    font-size: 100%;
+    /* Agrandit la taille du texte */
+    display: flex;
+    /* Organisation en flexbox */
+    flex-direction: row;
+    /* Les liens sont alignés en ligne */
+    justify-content: center;
+    /* Centrage horizontal (axe principal) */
+    align-items: center;
+    /* Centrage vertical (axe secondaire) */
 
-    white-space: nowrap;        /* Empêche le retour à la ligne des liens */
-    margin: 0 auto;             /* Centre le bloc horizontalement */
-    padding-bottom: 0.5%;                /* Espacement interne */
+    white-space: nowrap;
+    /* Empêche le retour à la ligne des liens */
+    margin: 0 auto;
+    /* Centre le bloc horizontalement */
+    padding-bottom: 0.5%;
+    /* Espacement interne */
     padding-top: 0.5%;
-    padding-left: 15%;           /* Plus d’espace à gauche */
-    padding-right: 15%;          /* Plus d’espace à droite */
+    padding-left: 15%;
+    /* Plus d’espace à gauche */
+    padding-right: 15%;
+    /* Plus d’espace à droite */
 }
 
 /* --- Style des liens dans le header --- */
 
 .lien_header {
-    margin-left: 1%;               /* Espacement entre les liens */
+    margin-left: 1%;
+    /* Espacement entre les liens */
     margin-right: 1%;
-    text-decoration: none;      /* Supprime le soulignement */
-    color: #4a4a4a;                /* Texte gris */
-    transition: color 0.5s;     /* Animation douce lors du changement de couleur */
-    padding: 1%;                /* Espacement interne */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    color: #4a4a4a;
+    /* Texte gris */
+    transition: color 0.5s;
+    /* Animation douce lors du changement de couleur */
+    padding: 1%;
+    /* Espacement interne */
     cursor: pointer;
 }
 
@@ -78,7 +104,7 @@ header {
 }
 
 /* Le lien principal (Fontaines ▾) */
-.navbar .dropdown > a {
+.navbar .dropdown>a {
     display: inline-block;
     padding: 0.5rem 0.8rem;
     text-decoration: none;
@@ -90,11 +116,12 @@ header {
 /* Conteneur du sous-menu (initialement caché) */
 .navbar .dropdown .dropdown-content {
     position: absolute;
-    top: calc(100% + 6px); /* juste sous le lien */
+    top: calc(100% + 6px);
+    /* juste sous le lien */
     left: 0;
     background: #f0efed;
     min-width: 220px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     border-radius: 6px;
     padding: 0.25rem 0;
     z-index: 999;
@@ -135,7 +162,8 @@ header {
 /* --- Effet au survol des liens --- */
 
 .lien_header:hover {
-    color: wheat;             /* Devient blanc au survol */
+    color: wheat;
+    /* Devient blanc au survol */
     /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
 }
 
@@ -146,7 +174,7 @@ header {
     transition: all 0.2s ease;
     border: none;
     background: none;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 .cta:before {
@@ -195,10 +223,10 @@ header {
 }
 
 .cta:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-#bloc_de_fond{
+#bloc_de_fond {
     display: flex;
     background-image: url("../../img/aix_sky_view1.jpeg");
     background-repeat: no-repeat;
@@ -209,26 +237,27 @@ header {
 }
 
 @keyframes reveal {
-    from{
+    from {
         transform: : scale(0);
-        opacity : 0 ;
+        opacity: 0;
     }
-    to{
+
+    to {
         transform: scale(1);
         opacity: 1;
     }
 }
 
-#texte_et_bouton_titre{
+#texte_et_bouton_titre {
     /* border: solid 3px red; */
     padding: 12.5%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    animation:  reveal linear 1.3s;
+    animation: reveal linear 1.3s;
 }
 
-h1{
+h1 {
     display: flex;
     margin: 0;
     justify-content: center;
@@ -237,7 +266,7 @@ h1{
     font-size: 300%;
 }
 
-#texte_ville_fontaine{
+#texte_ville_fontaine {
     color: whitesmoke;
 }
 
@@ -281,36 +310,36 @@ h1{
 }
 
 .cssbuttons-io-button:hover .icon {
-  width: calc(100% - 0.6em);
+    width: calc(100% - 0.6em);
 }
 
 .cssbuttons-io-button .icon svg {
-  width: 1.1em;
-  height: 1.1em;
-  display: block;
-  transform-origin: center;
-  transition: transform 0.3s;
-  color: #4a4a4a;
+    width: 1.1em;
+    height: 1.1em;
+    display: block;
+    transform-origin: center;
+    transition: transform 0.3s;
+    color: #4a4a4a;
 }
 
 .cssbuttons-io-button:hover .icon svg {
-  transform: translateX(0.1em);
+    transform: translateX(0.1em);
 }
 
 .cssbuttons-io-button:active .icon {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
-p{
+p {
     margin: 0;
     padding: 0;
 }
 
-h2{
+h2 {
     margin: 0;
 }
 
-#bloc_titre_description{
+#bloc_titre_description {
     display: flex;
     justify-content: center;
     background-color: #cfae4d;
@@ -319,13 +348,14 @@ h2{
     border-radius: 20px;
     padding: 0.3% 2% 0.3% 2%;
     cursor: default;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#titre_description{
+#titre_description {
     color: #f9f7ea;
 }
 
-#bloc_description{
+#bloc_description {
     /* border: solid 1px black; */
     position: relative;
     display: flex;
@@ -334,36 +364,78 @@ h2{
     margin: 0 auto;
 }
 
-#description_aix{
+#description_aix {
     position: absolute;
     display: flex;
-    /* border: solid 1px blue; */
     width: 45%;
     height: 100%;
+    font-size: 177%;
+    text-align: center;
+    /* border: 1px solid red; */
+    margin-left: 5%;
 }
 
-#bloc_photo_aix{
+#texte_description_aix {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#bloc_photo_aix {
     position: absolute;
     display: flex;
-    border: solid 1px black;
+    /* border: solid 1px black; */
     width: 45%;
     height: 100%;
     right: 0%;
 }
 
-#photo1{
-    border: solid 1px red;
+#bloc_photo1 {
+    position: absolute;
+    width: 50%;
+    right: 50%;
+    left: 50%;
+    top: 0%;
+    transform: translate(-50%);
+    z-index: 3;
 }
 
-#photo2{
-
+#photo1 {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
-#photo3{
-
+#bloc_photo2 {
+    position: absolute;
+    width: 45%;
+    top: 30%;
+    right: 0%;
+    z-index: 2;
 }
 
-#bloc_de_bloc{
+#photo2 {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#bloc_photo3 {
+    position: absolute;
+    width: 63%;
+    bottom: 0%;
+    left: 40%;
+    transform: translate(-50%);
+    z-index: 1;
+}
+
+#photo3 {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#bloc_de_bloc {
     display: flex;
     position: relative;
     border: black solid 2px;
@@ -373,33 +445,37 @@ h2{
     flex-wrap: wrap;
 }
 
-#bloc1{
-    background-color: red;
+#bloc1 {
     position: absolute;
     display: flex;
     width: 33%;
-    height: 30%;
     z-index: 1;
     top: 9%;
 }
 
-#bloc2{
-    display: flex;
-    position: absolute;
-    background-color: green;
-    width: 45%;
-    height: 30%;
-    z-index: 5;
-    right: 0%;
-    top:5%;
+#photo_bas_1 {
+    width: 100%;
+    border-radius: 10px;
 }
 
-#bloc3{
+#bloc2 {
     display: flex;
-    background-color: blue;
+    position: absolute;
+    width: 25%;
+    z-index: 5;
+    right: 0%;
+    top: 5%;
+}
+
+#photo_bas_2 {
+    width: 100%;
+    /* border-radius: 10px; */
+}
+
+#bloc3 {
+    display: flex;
     position: absolute;
     width: 45%;
-    height: 35%;
     z-index: 4;
     left: 50%;
     right: 50%;
@@ -408,31 +484,35 @@ h2{
     transform: translate(-50%, -50%);
 }
 
-#bloc4{
+#photo_bas_3 {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#bloc4 {
     display: flex;
-    background-color: orange;
     position: absolute;
     width: 36%;
-    height: 30%;
     z-index: 2;
-    bottom:13%;
+    bottom: 13%;
     left: 10%;
 }
 
-#bloc5{
+#photo_bas_4 {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#bloc5 {
     display: flex;
-    background-color: purple;
     position: absolute;
     width: 50%;
-    height: 30%;
     z-index: 1;
     bottom: 0%;
     right: 8%;
 }
 
-
-
-
-
-
-
+#photo_bas_5 {
+    width: 100%;
+    border-radius: 10px;
+}
