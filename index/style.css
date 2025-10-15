@@ -1,3 +1,49 @@
+@keyframes autoBlurAnimation {
+    0% {
+        filter: blur(20px);
+    }
+
+    35% {
+        filter: blur(0px);
+    }
+}
+
+@keyframes appear_left {
+    from {
+        opacity: 0;
+        transform: translate(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+@keyframes appear_right {
+    from {
+        opacity: 0;
+        transform: translate(+100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0%);
+    }
+}
+
+@keyframes reveal {
+    from {
+        transform: : scale(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 #image_de_fond {
     width: 100%;
     display: block;
@@ -236,21 +282,11 @@ header {
     margin-bottom: 3%;
 }
 
-@keyframes reveal {
-    from {
-        transform: : scale(0);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
 #texte_et_bouton_titre {
     /* border: solid 3px red; */
-    padding: 12.5%;
+    padding-bottom: 17%;
+    padding-top: 12.5%;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -363,6 +399,7 @@ h2 {
     box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
+
 #titre_description {
     color: #f9f7ea;
 }
@@ -391,6 +428,9 @@ h2 {
     display: flex;
     text-align: center;
     align-items: center;
+    animation: appear_left linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 #bloc_photo_aix {
@@ -400,6 +440,9 @@ h2 {
     width: 45%;
     height: 100%;
     right: 0%;
+    animation: appear_right linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
 }
 
 #bloc_photo1 {
@@ -533,6 +576,11 @@ h2 {
     width: 100%;
     border-radius: 10px;
     box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.blur {
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view(30% auto);
 }
 
 footer {
