@@ -1,63 +1,88 @@
-html{
+html {
     height: 100%;
 }
 
 body {
-    margin: 0;                  /* Supprime les marges par défaut du navigateur */
-    background-color: whitesmoke ;    /* Définit un fond blanc pour toute la page */
+    margin: 0;
+    /* Supprime les marges par défaut du navigateur */
+    background-color: whitesmoke;
+    /* Définit un fond blanc pour toute la page */
     height: 100%;
 }
 
 /* --- En-tête (header) --- */
 
 header {
-    display: flex;              /* Active le modèle flexbox pour aligner les éléments horizontalement */
-    background-color:#f9f7ea ;  /* Couleur de fond dorée */
-    padding: 1%;                /* Espacement interne */
-    align-items: center;        /* Centre verticalement les éléments dans le header */
-    height:7%;
+    display: flex;
+    /* Active le modèle flexbox pour aligner les éléments horizontalement */
+    background-color: #f9f7ea;
+    /* Couleur de fond dorée */
+    padding: 1%;
+    /* Espacement interne */
+    align-items: center;
+    /* Centre verticalement les éléments dans le header */
+    height: 7%;
 }
 
 /* --- Image de la Rotonde dans le header --- */
 
 #header_rotonde {
     /* position: fixed; */
-    width: 100%;                /* Largeur proportionnelle à la taille de l’écran */
-    margin-left: 1%;            /* Décalage à gauche */
-    padding: 0px;               /* Pas de padding */
+    width: 100%;
+    /* Largeur proportionnelle à la taille de l’écran */
+    margin-left: 1%;
+    /* Décalage à gauche */
+    padding: 0px;
+    /* Pas de padding */
 }
 
-#lien_logo{
+#lien_logo {
     width: 12.5%;
 }
 
 /* --- Bloc contenant les liens du header --- */
 
 #bloc_lien_header {
-    width: fit-content;         /* S’adapte à la largeur du contenu */
-    font-size: 100%;            /* Agrandit la taille du texte */
-    display: flex;              /* Organisation en flexbox */
-    flex-direction: row;        /* Les liens sont alignés en ligne */
-    justify-content: center;    /* Centrage horizontal (axe principal) */
-    align-items: center;        /* Centrage vertical (axe secondaire) */
+    width: fit-content;
+    /* S’adapte à la largeur du contenu */
+    font-size: 100%;
+    /* Agrandit la taille du texte */
+    display: flex;
+    /* Organisation en flexbox */
+    flex-direction: row;
+    /* Les liens sont alignés en ligne */
+    justify-content: center;
+    /* Centrage horizontal (axe principal) */
+    align-items: center;
+    /* Centrage vertical (axe secondaire) */
 
-    white-space: nowrap;        /* Empêche le retour à la ligne des liens */
-    margin: 0 auto;             /* Centre le bloc horizontalement */
-    padding-bottom: 0.5%;                /* Espacement interne */
+    white-space: nowrap;
+    /* Empêche le retour à la ligne des liens */
+    margin: 0 auto;
+    /* Centre le bloc horizontalement */
+    padding-bottom: 0.5%;
+    /* Espacement interne */
     padding-top: 0.5%;
-    padding-left: 15%;           /* Plus d’espace à gauche */
-    padding-right: 15%;          /* Plus d’espace à droite */
+    padding-left: 15%;
+    /* Plus d’espace à gauche */
+    padding-right: 15%;
+    /* Plus d’espace à droite */
 }
 
 /* --- Style des liens dans le header --- */
 
 .lien_header {
-    margin-left: 1%;               /* Espacement entre les liens */
+    margin-left: 1%;
+    /* Espacement entre les liens */
     margin-right: 1%;
-    text-decoration: none;      /* Supprime le soulignement */
-    color: #4a4a4a;                /* Texte gris */
-    transition: color 0.5s;     /* Animation douce lors du changement de couleur */
-    padding: 1%;                /* Espacement interne */
+    text-decoration: none;
+    /* Supprime le soulignement */
+    color: #4a4a4a;
+    /* Texte gris */
+    transition: color 0.5s;
+    /* Animation douce lors du changement de couleur */
+    padding: 1%;
+    /* Espacement interne */
     cursor: pointer;
 }
 
@@ -72,7 +97,7 @@ header {
 }
 
 /* Le lien principal (Fontaines ▾) */
-.navbar .dropdown > a {
+.navbar .dropdown>a {
     display: inline-block;
     padding: 0.5rem 0.8rem;
     text-decoration: none;
@@ -84,11 +109,12 @@ header {
 /* Conteneur du sous-menu (initialement caché) */
 .navbar .dropdown .dropdown-content {
     position: absolute;
-    top: calc(100% + 6px); /* juste sous le lien */
+    top: calc(100% + 6px);
+    /* juste sous le lien */
     left: 0;
     background: #f0efed;
     min-width: 220px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
     border-radius: 6px;
     padding: 0.25rem 0;
     z-index: 999;
@@ -129,7 +155,8 @@ header {
 /* --- Effet au survol des liens --- */
 
 .lien_header:hover {
-    color: wheat;             /* Devient blanc au survol */
+    color: wheat;
+    /* Devient blanc au survol */
     /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
 }
 
@@ -140,7 +167,7 @@ header {
     transition: all 0.2s ease;
     border: none;
     background: none;
-    cursor: pointer;  
+    cursor: pointer;
 }
 
 .cta:before {
@@ -189,5 +216,94 @@ header {
 }
 
 .cta:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
+}
+
+#image_fond_principal {
+    border: 1px black solid;
+    background-image: url(../../img/fond_saint_gens_de_malte.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+footer {
+    margin-top: 4%;
+    display: flex;
+    background-color: #F0EFED;
+    padding: 3.5%;
+}
+
+#footer_lien_logo {
+    width: 15%;
+}
+
+#footer_logo {
+    width: 100%;
+}
+
+#footer_bloc_lien1 {
+    margin-left: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* border: solid 1px red; */
+}
+
+#footer_bloc_lien2 {
+    margin-left: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    /* border: solid 1px blue; */
+}
+
+#footer_droit_qam {
+    margin-left: 5%;
+}
+
+#footer_h3 {
+    text-align: center;
+}
+
+#footer_bloc_reseaux {
+    /* border: solid 1px red; */
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: center;
+}
+
+#footer_lien_youtube {
+    display: flex;
+    width: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#logo_youtube {
+    width: 100%;
+}
+
+#footer_lien_instagram {
+    display: flex;
+    width: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#logo_instagram {
+    width: 100%;
+}
+
+#footer_lien_pinterest {
+    display: flex;
+    width: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#logo_pinterest {
+    width: 100%;
 }
