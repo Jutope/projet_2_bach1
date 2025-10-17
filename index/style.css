@@ -3,7 +3,7 @@
         filter: blur(20px);
     }
 
-    35% {
+    32% {
         filter: blur(0px);
     }
 }
@@ -34,7 +34,7 @@
 
 @keyframes reveal {
     from {
-        transform: : scale(0);
+        transform: scale(1);
         opacity: 0;
     }
 
@@ -275,22 +275,27 @@ header {
 #bloc_de_fond {
     display: flex;
     background-image: url("../../img/aix_sky_view1.jpeg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    /* height: 100%; */
+    height: 100vh;
     justify-content: center;
     margin-bottom: 3%;
+    /* border: 1px black solid; */
 }
 
-
 #texte_et_bouton_titre {
+    padding: 1%;
     /* border: solid 3px red; */
-    padding-bottom: 17%;
-    padding-top: 12.5%;
     justify-content: center;
     align-items: center;
     text-align: center;
     animation: reveal linear 1.3s;
+    height: fit-content;
+    margin-top: 12%;
+    backdrop-filter: blur(3px);
+    border-radius: 25px;
+    transition: 10px;
 }
 
 h1 {
@@ -299,7 +304,7 @@ h1 {
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 300%;
+    font-size: 400%;
 }
 
 #texte_ville_fontaine {
@@ -411,96 +416,6 @@ h2 {
     top: 25%;
 } */
 
-#lien_point_maps_rotonde {
-    position: absolute;
-    display: flex;
-    width: 5%;
-    top: 25%;
-    left: 3.3%;
-}
-
-#img_point_maps_rotonde {
-    width: 100%;
-    transition: 0.2s;
-}
-
-#img_point_maps_rotonde:hover {
-    width: 130%;
-    transform: translate(-10%, -10%);
-}
-
-#lien_point_maps_mirabeau {
-    position: absolute;
-    display: flex;
-    width: 5%;
-    top: 18%;
-    left: 21.5%;
-}
-
-#img_point_maps_mirabeau {
-    width: 100%;
-    transition: 0.2s;
-}
-
-#img_point_maps_mirabeau:hover {
-    width: 130%;
-    transform: translate(-10%, -10%);
-}
-
-#lien_point_maps_dauphin {
-    position: absolute;
-    display: flex;
-    width: 5%;
-    top: 48%;
-    left: 47.2%;
-}
-
-#img_point_maps_dauphin {
-    width: 100%;
-    transition: 0.2s;
-}
-
-#img_point_maps_dauphin:hover {
-    width: 130%;
-    transform: translate(-10%, -10%);
-}
-
-#lien_point_maps_chaude {
-    position: absolute;
-    display: flex;
-    width: 5%;
-    top: 14%;
-    left: 32.5%;
-}
-
-#img_point_maps_chaude {
-    width: 100%;
-    transition: 0.2s;
-}
-
-#img_point_maps_chaude:hover {
-    width: 130%;
-    transform: translate(-10%, -10%);
-}
-
-#lien_point_maps_eglise {
-    position: absolute;
-    display: flex;
-    width: 5%;
-    top: 45%;
-    left: 73.5%;
-}
-
-#img_point_maps_eglise {
-    width: 100%;
-    transition: 0.2s;
-}
-
-#img_point_maps_eglise:hover {
-    width: 130%;
-    transform: translate(-10%, -10%);
-}
-
 #bloc_description {
     /* border: solid 1px black; */
     position: relative;
@@ -527,7 +442,7 @@ h2 {
     align-items: center;
     animation: appear_left linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 30%;
 }
 
 #bloc_photo_aix {
@@ -539,7 +454,7 @@ h2 {
     right: 0%;
     animation: appear_right linear;
     animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+    animation-range: entry 0% cover 30%;
 }
 
 #bloc_photo1 {
@@ -611,6 +526,242 @@ h2 {
 
 #bloc_photo3:hover {
     z-index: 3;
+}
+
+#lien_point_maps_rotonde {
+    position: absolute;
+    display: flex;
+    width: 5%;
+    top: 25%;
+    left: 3.3%;
+}
+
+#img_point_maps_rotonde {
+    width: 100%;
+    transition: 0.2s;
+}
+
+#img_point_maps_rotonde:hover {
+    width: 130%;
+    transform: translate(-10%, -10%);
+}
+
+#infobulle_rotonde {
+    position: absolute;
+    display: none;
+    background: #f0efed;
+    border-radius: 5px;
+    text-align: center;
+    bottom: 100%;
+    right: 50%;
+    transform: translate(50%);
+    /* border: 1px solid red; */
+    width: 500%;
+    border-radius: 10px;
+    background-color: #cfae4d;
+    color: #F0EFED;
+}
+
+#image_infobulle_rotonde {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#lien_point_maps_rotonde:hover #infobulle_rotonde {
+    display: block;
+}
+
+@media screen and (width: 1920px) {
+    #lien_point_maps_rotonde {
+        top: 24%;
+        left: 5.5%;
+    }
+}
+
+#lien_point_maps_mirabeau {
+    position: absolute;
+    display: flex;
+    width: 5%;
+    top: 18%;
+    left: 21.5%;
+}
+
+#img_point_maps_mirabeau {
+    width: 100%;
+    transition: 0.2s;
+}
+
+#img_point_maps_mirabeau:hover {
+    width: 130%;
+    transform: translate(-10%, -10%);
+}
+
+#infobulle_mirabeau {
+    position: absolute;
+    display: none;
+    background: #f0efed;
+    border-radius: 5px;
+    text-align: center;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%);
+    /* border: 1px solid red; */
+    width: 500%;
+    border-radius: 10px;
+    background-color: #cfae4d;
+    color: #F0EFED;
+}
+
+#image_infobulle_mirabeau {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#lien_point_maps_mirabeau:hover #infobulle_mirabeau {
+    display: block;
+}
+
+@media screen and (width: 1920px) {
+    #lien_point_maps_mirabeau {
+        top: 17%;
+        left: 22.9%;
+    }
+}
+
+#lien_point_maps_dauphin {
+    position: absolute;
+    display: flex;
+    width: 5%;
+    top: 48%;
+    left: 47.2%;
+}
+
+#img_point_maps_dauphin {
+    width: 100%;
+    transition: 0.2s;
+}
+
+#img_point_maps_dauphin:hover {
+    width: 130%;
+    transform: translate(-10%, -10%);
+}
+
+#infobulle_dauphin {
+    position: absolute;
+    display: none;
+    background: #f0efed;
+    border-radius: 5px;
+    text-align: center;
+    bottom: 100%;
+    right: 50%;
+    transform: translate(50%);
+    /* border: 1px solid red; */
+    width: 500%;
+    border-radius: 10px;
+    background-color: #cfae4d;
+    color: #F0EFED;
+}
+
+#image_infobulle_dauphin {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#lien_point_maps_dauphin:hover #infobulle_dauphin {
+    display: block;
+}
+
+#lien_point_maps_chaude {
+    position: absolute;
+    display: flex;
+    width: 5%;
+    top: 14%;
+    left: 32.5%;
+}
+
+#img_point_maps_chaude {
+    width: 100%;
+    transition: 0.2s;
+}
+
+#img_point_maps_chaude:hover {
+    width: 130%;
+    transform: translate(-10%, -10%);
+}
+
+#infobulle_chaude {
+    position: absolute;
+    display: none;
+    background: #f0efed;
+    border-radius: 5px;
+    text-align: center;
+    top: 100%;
+    right: 50%;
+    transform: translate(50%);
+    /* border: 1px solid red; */
+    width: 500%;
+    border-radius: 10px;
+    background-color: #cfae4d;
+    color: #F0EFED;
+}
+
+#image_infobulle_chaude {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#lien_point_maps_chaude:hover #infobulle_chaude {
+    display: block;
+}
+
+@media screen and (width: 1920px) {
+    #lien_point_maps_chaude {
+        top: 12.7%;
+        left: 33.4%;
+    }
+}
+
+#lien_point_maps_eglise {
+    position: absolute;
+    display: flex;
+    width: 5%;
+    top: 45%;
+    left: 73.5%;
+}
+
+#img_point_maps_eglise {
+    width: 100%;
+    transition: 0.2s;
+}
+
+#img_point_maps_eglise:hover {
+    width: 130%;
+    transform: translate(-10%, -10%);
+}
+
+#infobulle_eglise {
+    position: absolute;
+    display: none;
+    background: #f0efed;
+    border-radius: 5px;
+    text-align: center;
+    bottom: 100%;
+    right: 50%;
+    transform: translate(50%);
+    /* border: 1px solid red; */
+    width: 500%;
+    border-radius: 10px;
+    background-color: #cfae4d;
+    color: #F0EFED;
+}
+
+#image_infobulle_eglise {
+    border-radius: 10px;
+    width: 100%;
+}
+
+#lien_point_maps_eglise:hover #infobulle_eglise {
+    display: block;
 }
 
 #bloc_de_bloc {
