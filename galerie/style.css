@@ -219,6 +219,80 @@ header {
     transform: scale(0.95);
 }
 
+/* CSS GRID, il est important de donner la taille du conteneur en entier et pas uniquement la taille des colonnes et des grilles
+Les colonnes prennent alors leur taille par rapport a la taille donnée de la grille 
+c'est un système parent enfant 
+Les éléments contenus dans la grille prennent leur taille par rapport aux valeurs des colonnes et lignes*/
+.container_grid{
+    width: 100%;
+    height: 100%;
+    margin:10%;
+    display: grid;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(3, 33%);
+
+}
+
+.element1{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: red;
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.element2{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(153, 255, 0);
+    grid-column: 3/5;
+    grid-row: 1/2;
+}
+.element3{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(0, 195, 255);
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.element4{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(255, 0, 230);
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+.element5{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(238, 255, 0);
+    grid-column: 4/5;
+    grid-row: 2/3;
+}
+.element6{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(255, 0, 102);
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+
+.element7{
+    width: 100%;
+    height: 100%;
+    border: black solid 2px;
+    background-color: rgb(255, 170, 0);
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+
+
+
 footer {
     margin-top: 4%;
     display: flex;
