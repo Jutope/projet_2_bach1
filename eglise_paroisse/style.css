@@ -250,6 +250,7 @@ h1 {
     padding: 0.3% 2% 0.3% 2%;
     border-radius: 20px;
     backdrop-filter: blur(3px);
+    padding: 1%;
 }
 
 #bloc_petit_titre {

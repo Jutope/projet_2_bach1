@@ -220,6 +220,39 @@ header {
     transform: scale(0.95);
 }
 
+#image_de_fond {
+    display: flex;
+    align-items: center;
+    background-image: url("../../img/fond-fontaine_quatre_dauphin.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* border: solid 1px black; */
+}
+
+h1 {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 400%;
+}
+
+#bloc_titre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    /* border: 1px red solid; */
+    width: fit-content;
+    backdrop-filter: blur(3px);
+    padding: 1%;
+    height: fit-content;
+    border-radius: 20px;
+}
+
 footer {
     margin-top: 4%;
     display: flex;
