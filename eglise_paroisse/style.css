@@ -220,12 +220,75 @@ header {
 }
 
 #image_fond_principal {
-    border: 1px black solid;
+    display: flex;
     background-image: url(../../img/fond_saint_gens_de_malte.jpg);
-    background-position: center;
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    margin-bottom: 3%;
+}
+
+h1 {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 400%;
+}
+
+#bloc_titre {
+    display: flex;
+    /* border: 1px solid black; */
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 12.5%;
+    padding: 0.3% 2% 0.3% 2%;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+}
+
+#bloc_petit_titre {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    background-color: #cfae4d;
+    width: fit-content;
+    margin: 0 auto 2% auto;
+    border-radius: 20px;
+    padding: 0.3% 2% 0.3% 2%;
+    cursor: default;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin: 0;
+    color: white;
+}
+
+#bloc_des_blocs {
+    border: 1px solid purple;
+    position: relative;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#bloc_images {
+    left: 0;
+    position: absolute;
+    border: red solid 1px;
+    width: 40%;
+}
+
+#bloc_text {
+    right: 0;
+    position: absolute;
+    border: 1px solid blue;
+    width: 50%;
 }
 
 footer {

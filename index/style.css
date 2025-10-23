@@ -386,7 +386,7 @@ h2 {
     /* border: 1px solid red; */
     width: 60%;
     height: 58%;
-    background-image: url(../../img/bd_du_roi_rene.png);
+    background-image: url("../../img/bd_du_roi_rene_remake.png");
     background-position: center;
     background-size: contain;
     margin: 0 auto;
