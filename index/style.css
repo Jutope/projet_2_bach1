@@ -194,7 +194,8 @@ header {
 
 /* Effet au survol d'un item du sous-menu */
 .navbar .dropdown .dropdown-content li a:hover {
-    background: #f2f2f2;
+    background: #e5e4e2;
+    color: #cfae4d;
 }
 
 /* Afficher le sous-menu au survol ou quand il a le focus (clavier) */
@@ -208,7 +209,7 @@ header {
 /* --- Effet au survol des liens --- */
 
 .lien_header:hover {
-    color: wheat;
+    color: #cfae4d;
     /* Devient blanc au survol */
     /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
 }
@@ -391,6 +392,7 @@ h2 {
     background-size: contain;
     margin: 0 auto;
     background-repeat: no-repeat;
+
 }
 
 #bloc_titre_description {
