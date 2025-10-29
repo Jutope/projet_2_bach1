@@ -331,7 +331,7 @@ h2 {
 #bloc_image_3 {
     position: absolute;
     left: 10%;
-    bottom: 0%;
+    bottom: 10%;
     width: 40%;
     border-radius: 10px;
 }
@@ -350,17 +350,26 @@ h2 {
 }
 
 #bloc_text {
+    display: flex;
     right: 0;
     position: absolute;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     width: 50%;
-    height: 100%;
 }
 
 #text {
+    border: 1px black solid;
     text-align: center;
     font-size: 200%;
+    height: 100%;
 }
+
+/* 
+@media screen and (max-height: 2000px) {
+    #bloc_text {
+        height: fit-content;
+    }
+} */
 
 footer {
     margin-top: 4%;
