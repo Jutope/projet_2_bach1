@@ -299,13 +299,14 @@ h2 {
     width: 100%;
     border-radius: 10px;
     transition: 1s;
+    position: relative;
+    transform-origin: center center;
     box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 #image1:hover {
-    width: 120%;
     z-index: 3;
-    transform: translate(-10%, -8%);
+    transform: scale(1.1);
 }
 
 #bloc_image_2 {
@@ -327,9 +328,8 @@ h2 {
 }
 
 #image2:hover {
-    width: 120%;
     z-index: 3;
-    transform: translate(-10%, -8%);
+    transform: scale(1.1);
 }
 
 #bloc_image_3 {
@@ -348,12 +348,11 @@ h2 {
 }
 
 #image3:hover {
-    width: 120%;
     z-index: 3;
-    transform: translate(-10%, 8%);
+    transform: scale(1.1);
 }
 
-#bloc_text{
+#bloc_text {
     width: fit-content;
 }
 
@@ -365,6 +364,12 @@ h2 {
     height: fit-content;
     right: 0;
     width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+    #text {
+        font-size: 200%;
+    }
 }
 
 footer {
