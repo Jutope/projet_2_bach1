@@ -277,7 +277,6 @@ h2 {
     margin: 0 auto;
     width: 90%;
     justify-content: center;
-
 }
 
 #bloc_text1 {
@@ -363,7 +362,7 @@ h2 {
 
 #carre {
     position: relative;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 95%;
     margin: 0 auto;
     height: 70vh;
@@ -390,7 +389,12 @@ h2 {
 }
 
 .post-it3{
-    
+    position: absolute;
+    /* border: 1px solid blue; */
+    width: 27.5%;
+    height: 100%;
+    background-color: #E8D8A4;
+    right: 1%;
 }
 
 #post1{
@@ -400,6 +404,7 @@ h2 {
     left: 50%;
     transform: translate(-50%);
     top: 20%;
+    transition: 1s;
 }
 
 #post2{
@@ -409,16 +414,61 @@ h2 {
     left: 50%;
     transform: translate(-50%);
     top: 20%;
+    transition: 1s;
 }
 
 #post3{
-
+    position: absolute;
+    width: 90%;
+    z-index: 1;
+    left: 50%;
+    transform: translate(-50%);
+    top: 20%;
+    transition: 1s;
 }
 
 .text_post-it{
     padding-top: 2%;
     font-size: 300%;
     text-align: center;
+}
+
+.lien_postit{
+    color: #330a0a;
+    text-decoration: none;
+}
+
+#description2 {
+    /* border: 1px solid black; */
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: center;
+    transform: translateY(-20%);
+}
+
+#bloc_text2 {
+    /* border: 1px solid red; */
+    width: 45%;
+    margin-left: 4.5%;
+}
+
+#text2 {
+    /* border: 1px solid red; */
+    font-size: 175%;
+    text-align: justify;
+}
+
+#bloc_image2 {
+    transform: translateY(-5%);
+    margin-right: 4.5%;
+    width: 33%;
+}
+
+#image2 {
+    /* border: 1px solid yellowgreen; */
+    width: 100%;
+    border-radius: 20px;
 }
 
 footer {
