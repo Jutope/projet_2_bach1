@@ -1,39 +1,84 @@
-// script/script.js
 document.addEventListener('DOMContentLoaded', () => {
-  // Le bouton de changement de langue (déjà présent dans tes pages)
-  const toggleBtn = document.querySelector('#bloc_bouton_header .cta');
-  if (!toggleBtn) return;
+  const q = window.location.search || '';
+  const h = window.location.hash || '';
 
-  toggleBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-
-    // Chemin actuel (ex: /la_rotonde/la_rotonde.html)
-    const path = window.location.pathname;
-
-    // Sépare dossier et fichier
-    const lastSlash = path.lastIndexOf('/');
-    const dir = path.substring(0, lastSlash);       // ex: /la_rotonde
-    let file = path.substring(lastSlash + 1);        // ex: la_rotonde.html
-
-    // Cas de figure rare: URL terminant par un / (ex: /index/)
-    if (!file) file = 'index.html';
-
-    // Conserve query string et hash si présents
-    const q = window.location.search || '';
-    const h = window.location.hash || '';
-
-    // Sépare nom de fichier et extension
+  const splitFile = (file) => {
     const dot = file.lastIndexOf('.');
-    const ext = dot !== -1 ? file.substring(dot) : '.html';
-    const name = dot !== -1 ? file.substring(0, dot) : file;
+    return {
+      name: dot !== -1 ? file.substring(0, dot) : file,
+      ext: dot !== -1 ? file.substring(dot) : '.html',
+    };
+  };
 
-    // Si la page finit par _en => on retire le suffixe, sinon on l'ajoute
-    const isEnglish = name.endsWith('_en');
-    const base = isEnglish ? name.slice(0, -3) : (name + '_en');
-    const targetFile = base + ext;
+  const ensureIndexIfDir = (urlObj) => {
+    if (urlObj.pathname.endsWith('/')) {
+      urlObj.pathname += 'index.html';
+    }
+  };
 
-    // Reconstruit l'URL cible en conservant query + hash
-    const newUrl = `${dir}/${targetFile}${q}${h}`;
-    window.location.href = newUrl;
-  });
+  const toggleFile = (file) => {
+    const { name, ext } = splitFile(file);
+    return (name.endsWith('_en') ? name.slice(0, -3) : name + '_en') + ext;
+  };
+
+  const toEnglishPathname = (pathname) => {
+    if (pathname.endsWith('/')) {
+      return pathname + 'index_en.html';
+    }
+    const file = pathname.substring(pathname.lastIndexOf('/') + 1) || 'index.html';
+    const dir = pathname.slice(0, pathname.lastIndexOf('/') + 1);
+    const { name, ext } = splitFile(file);
+    const enName = name.endsWith('_en') ? name : name + '_en';
+    return dir + enName + ext;
+  };
+
+  const isEnglishPage = (() => {
+    const path = window.location.pathname;
+    const last = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    const { name } = splitFile(last);
+    return name.endsWith('_en');
+  })();
+
+  const toggleBtn = document.querySelector('#bloc_bouton_header .cta');
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const path = window.location.pathname;
+      const last = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+      const dir = path.substring(0, path.lastIndexOf('/'));
+      const newFile = toggleFile(last);
+      window.location.href = `${dir}/${newFile}${q}${h}`;
+    });
+  }
+
+  if (isEnglishPage) {
+    document.body.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href]');
+      if (!a) return;
+
+      const href = a.getAttribute('href');
+      if (
+        !href ||
+        href.startsWith('#') ||
+        href.startsWith('mailto:') ||
+        href.startsWith('tel:') ||
+        /^https?:\/\//i.test(href)
+      ) {
+        return;
+      }
+
+      e.preventDefault();
+      const target = new URL(href, window.location.href);
+      const file = target.pathname.substring(target.pathname.lastIndexOf('/') + 1) || 'index.html';
+      const { name } = splitFile(file);
+      if (name.endsWith('_en')) {
+        window.location.href = target.href;
+        return;
+      }
+
+      const enPath = toEnglishPathname(target.pathname);
+      target.pathname = enPath;
+      window.location.href = target.href;
+    });
+  }
 });
