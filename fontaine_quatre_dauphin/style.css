@@ -156,9 +156,9 @@ header {
 /* --- Effet au survol des liens --- */
 
 .lien_header:hover {
-    color: #cfae4d
-        /* Devient blanc au survol */
-        /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
+    color: #cfae4d;
+    /* Devient blanc au survol */
+    /* text-decoration: overline;  (désactivé mais garderait une ligne au-dessus du texte) */
 }
 
 .cta {
@@ -220,15 +220,14 @@ header {
     transform: scale(0.95);
 }
 
-#image_de_fond {
+#image_fond_principal {
     display: flex;
-    align-items: center;
-    background-image: url("../../img/fond-fontaine_quatre_dauphin.jpg");
+    background-image: url(../../img/dauphin_cover.png);
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-    /* border: solid 1px black; */
+    margin-bottom: 3%;
 }
 
 h1 {
@@ -242,15 +241,135 @@ h1 {
 
 #bloc_titre {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 5%;
-    /* border: 1px red solid; */
+    /* border: 1px solid black; */
     width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 12.5%;
+    padding: 0.3% 2% 0.3% 2%;
+    border-radius: 20px;
     backdrop-filter: blur(3px);
     padding: 1%;
-    height: fit-content;
+}
+
+#bloc_petit_titre {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    background-color: #cfae4d;
+    width: fit-content;
+    margin: 0 auto 2% auto;
     border-radius: 20px;
+    padding: 0.3% 2% 0.3% 2%;
+    cursor: default;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin: 0;
+    color: white;
+}
+
+#bloc_des_blocs {
+    display: flex;
+    /* border: 1px solid purple; */
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    gap: 3.5%;
+}
+
+#bloc_images {
+    position: relative;
+    /* border: red solid 1px; */
+    width: 100%;
+    height: auto;
+}
+
+#bloc_image_1 {
+    position: absolute;
+    display: flex;
+    left: 5%;
+    width: 45%;
+    border-radius: 10px;
+}
+
+#image1 {
+    width: 100%;
+    border-radius: 10px;
+    transition: 1s;
+    position: relative;
+    transform-origin: center center;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#image1:hover {
+    z-index: 3;
+    transform: scale(1.1);
+}
+
+#bloc_image_2 {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0%, 25%);
+    right: 0;
+    top: 25%;
+    width: 45%;
+    border-radius: 10px;
+}
+
+#image2 {
+    width: 100%;
+    border-radius: 10px;
+    transition: 1s;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#image2:hover {
+    z-index: 3;
+    transform: scale(1.1);
+}
+
+#bloc_image_3 {
+    position: absolute;
+    left: 5%;
+    bottom: 0%;
+    width: 45%;
+    border-radius: 10px;
+}
+
+#image3 {
+    transition: 1s;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+#image3:hover {
+    z-index: 3;
+    transform: scale(1.1);
+}
+
+#bloc_text {
+    width: fit-content;
+}
+
+#text {
+    margin: 0;
+    /* border: 1px black solid; */
+    text-align: center;
+    font-size: 180%;
+    height: fit-content;
+    right: 0;
+    width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+    #text {
+        font-size: 200%;
+    }
 }
 
 footer {
@@ -331,4 +450,84 @@ footer {
 
 #logo_pinterest {
     width: 100%;
+}
+
+/* ====== Ajustement : baisse de la photo noir et blanc ====== */
+
+#bloc_images {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(18px, 2.2vw, 32px);
+  align-items: start;
+  justify-content: center;
+  max-width: 30vw;
+  margin-left: 5%;
+  margin-top: -1.2rem;
+}
+
+#bloc_image_1,
+#bloc_image_2,
+#bloc_image_3 {
+  position: relative !important;
+  width: 100% !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 6px 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* === Image noir et blanc === */
+#bloc_image_1 {
+  grid-column: 1 / 3;
+  aspect-ratio: 4 / 3;
+  margin-top: 3.5rem; /* ✅ on descend la photo en noir et blanc */
+}
+
+/* === Autres images === */
+#bloc_image_2,
+#bloc_image_3 {
+  aspect-ratio: 3 / 4;
+}
+
+/* On garde l’asymétrie actuelle */
+#bloc_image_2 {
+  margin-top: 3.2rem;
+}
+#bloc_image_3 {
+  margin-top: -2rem;
+}
+
+/* === Images internes === */
+#bloc_images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+
+#bloc_images img:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  #bloc_images {
+    grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: 0 auto;
+    gap: 18px;
+  }
+
+  #bloc_image_1 {
+    aspect-ratio: 4 / 3;
+    margin-top: 0;
+  }
+
+  #bloc_image_2,
+  #bloc_image_3 {
+    aspect-ratio: 4 / 5;
+    margin-top: 0;
+  }
 }
