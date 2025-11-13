@@ -447,6 +447,12 @@ h2 {
     animation-range: entry 0% cover 30%;
 }
 
+@media screen and (width = 1920px) {
+  p  {
+    font-size: 100%;
+  }
+}
+
 #bloc_photo_aix {
     position: absolute;
     display: flex;
