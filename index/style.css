@@ -447,11 +447,6 @@ h2 {
     animation-range: entry 0% cover 30%;
 }
 
-@media screen and (width = 1920px) {
-  p  {
-    font-size: 100%;
-  }
-}
 
 #bloc_photo_aix {
     position: absolute;
@@ -916,7 +911,7 @@ h2 {
 footer {
     margin-top: 4%;
     display: flex;
-    background-color: #F0EFED;
+    background-color: #E8D8A4;
     padding: 3.5%;
 }
 
