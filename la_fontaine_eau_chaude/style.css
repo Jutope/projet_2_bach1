@@ -282,7 +282,7 @@ h2 {
 
 #bloc_images {
     position: relative;
-    border: red solid 1px;
+    /* border: red solid 1px; */
     width: 100%;
     height: auto;
 }
@@ -360,7 +360,7 @@ h2 {
     margin: 0;
     /* border: 1px black solid; */
     text-align: center;
-    font-size: 180%;
+    font-size: 170%;
     height: fit-content;
     right: 0;
     width: 100%;

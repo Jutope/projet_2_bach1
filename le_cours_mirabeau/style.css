@@ -220,6 +220,85 @@ header {
     transform: scale(0.95);
 }
 
+#image_fond_principal {
+    display: flex;
+    background-image: url(../../img/cours_mirabeau.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin-bottom: 3%;
+}
+
+h1 {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 400%;
+}
+
+#bloc_titre {
+    display: flex;
+    /* border: 1px solid black; */
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 12.5%;
+    padding: 0.3% 2% 0.3% 2%;
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    padding: 1%;
+}
+
+#bloc_petit_titre {
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    background-color: #cfae4d;
+    width: fit-content;
+    margin: 0 auto 2% auto;
+    border-radius: 20px;
+    padding: 0.3% 7% 0.3% 7%;
+    cursor: default;
+    box-shadow: 6px 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin: 0;
+    color: white;
+}
+
+#description {
+    border: 1px solid black;
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: center;
+
+}
+
+#bloc_text1 {
+    border: 1px solid red;
+    width: 45%;
+    margin-right: 1%;
+}
+
+#text1 {
+    font-size: 150%;
+}
+
+#bloc_image1 {
+    margin-left: 1%;
+    width: 37.5%;
+}
+
+#image1 {
+    width: 100%;
+}
+
 footer {
     margin-top: 4%;
     display: flex;
